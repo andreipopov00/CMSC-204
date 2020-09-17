@@ -137,10 +137,8 @@ public class PasswordCheckerUtility {
 		}
 		
 		if (num < 2) {
-			System.out.println("VALID " + password + " : " + num);
 			return true;
 		} else {
-			System.out.println("INVALID " + password + " : " + num);
 			throw new InvalidSequenceException();
 		}
 		
