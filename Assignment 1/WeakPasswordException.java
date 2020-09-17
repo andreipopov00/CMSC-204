@@ -1,0 +1,14 @@
+/**
+ * Thrown if a password is less than 10 characters long but otherwise of valid length.
+ * 
+ * @author Rose Griffin
+ *
+ */
+@SuppressWarnings("serial")
+public class WeakPasswordException extends Exception  {
+
+	public WeakPasswordException(){
+		super("The password is OK but weak - it contains fewer than 10 characters");
+	}
+
+}
