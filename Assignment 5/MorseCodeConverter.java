@@ -39,12 +39,10 @@ public class MorseCodeConverter {
 			letters = words[i].split("\\s+");
 			for (int j = 0; j < letters.length; j++)
 				sb.append(tree.fetch(letters[j]));
-			
-			//Append spaces between words
-			if (i < words.length-1)
-				sb.append(" ");
+			sb.append(" ");
+
 		}
-		return sb.toString();
+		return sb.toString().trim();
 	}
 	
 	/**
