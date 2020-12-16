@@ -1,5 +1,6 @@
 /**
- * Edge
+ * Creates a road, which serves as an edge and holds the following: the source town, the destination town, the distance between those two towns, and
+ * the name of the road
  * 
  * @author Rose Griffin
  *
@@ -38,26 +39,48 @@ public class Road implements Comparable<Road>{
 		this.name = name;
 	}
 	
+	/**
+	 * Checks if the road is connected by a town
+	 * @param town - town to check
+	 * @return - true if the road is connected by this town, false if not.
+	 */
 	public boolean contains(Town town) {
-		return false;
+		return town.equals(source) || town.equals(destination);
 	}
 	
+	@Override
 	public String toString() {
 		return name;
 	}
 	
+	/**
+	 * Gets the name of the road
+	 * @return - name of the road
+	 */
 	public String getName() {
 		return name;
 	}
 	
+	/**
+	 * Gets the destination
+	 * @return - destination
+	 */
 	public Town getDestination() {
 		return destination;
 	}
 	
+	/**
+	 * Gets the source
+	 * @return - source
+	 */
 	public Town getSource() {
 		return source;
 	}
 	
+	/**
+	 * Gets the distance
+	 * @return - distance
+	 */
 	public int getWeight() {
 		return weight;
 	}
@@ -67,6 +90,7 @@ public class Road implements Comparable<Road>{
 		return o.getName().compareTo(name);
 	}
 	
+	@Override
 	public boolean equals(Object r) {
 		if (!(r instanceof Road) || !(compareTo((Road) r) == 0)) {
 			return false;
